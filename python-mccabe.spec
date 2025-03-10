@@ -4,13 +4,13 @@
 %bcond_without	python2 # CPython 2.x module
 %bcond_without	python3 # CPython 3.x module
 
-%define 	module	mccabe
+%define		module	mccabe
 Summary:	McCabe checker, plugin for flake8
 Summary(pl.UTF-8):	Wtyczka flake8 do sprawdzania złożoności McCabe'a
 Name:		python-%{module}
 # keep 0.6.x here for python2 support and flake8 compatibility
 Version:	0.6.1
-Release:	8
+Release:	9
 License:	Expat/MIT
 Group:		Libraries/Python
 #Source0Download: https://pypi.org/simple/mccabe/
@@ -21,18 +21,18 @@ BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 1.714
 %if %{with python2}
 BuildRequires:	python-devel >= 1:2.7
-BuildRequires:	python-pytest-runner
 BuildRequires:	python-setuptools
 %if %{with tests}
 BuildRequires:	python-pytest
+BuildRequires:	python-pytest-runner
 %endif
 %endif
 %if %{with python3}
 BuildRequires:	python3-devel >= 1:3.3
-BuildRequires:	python3-pytest-runner
 BuildRequires:	python3-setuptools
 %if %{with tests}
 BuildRequires:	python3-pytest
+BuildRequires:	python3-pytest-runner
 %endif
 %endif
 Requires:	python-modules >= 1:2.7
